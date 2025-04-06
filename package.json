@@ -1,0 +1,62 @@
+{
+  "name": "gensou-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GenSou AI - マインドマップ連動型 AI 小説執筆アシスタント。思考を地図にし、物語を綴る。",
+  "author": {
+    "name": "parkwoo",
+    "email": "parkwoo@users.noreply.github.com",
+    "url": "https://github.com/parkwoo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "novel-writing",
+    "ai",
+    "writing-assistant",
+    "mindmap",
+    "japanese",
+    "pwa",
+    "nextjs",
+    "gpt-5",
+    "claude-4",
+    "vertical-text",
+    "web-novel"
+  ],
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter web dev\" \"pnpm --filter api dev\"",
+    "build": "pnpm --filter web build && pnpm --filter api build",
+    "start": "concurrently \"pnpm --filter web start\" \"pnpm --filter api start\"",
+    "lint": "pnpm --filter web lint && pnpm --filter api lint",
+    "test": "pnpm --filter web test && pnpm --filter api test",
+    "typecheck": "pnpm --filter web typecheck",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "docker:logs": "docker-compose logs -f",
+    "setup": "pnpm install && cp .env.example .env",
+    "version:bump": "changeset version",
+    "version:patch": "npm version patch -m 'chore: bump version to %s'",
+    "version:minor": "npm version minor -m 'feat: bump version to %s'",
+    "version:major": "npm version major -m 'feat: bump version to %s'",
+    "release": "pnpm build && git add ."
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5",
+    "turbo": "^1.11.3"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parkwoo/gensou-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/parkwoo/gensou-ai/issues"
+  },
+  "homepage": "https://gensou-ai.com"
+}

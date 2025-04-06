@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  # Frontend (Next.js PWA)
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+    volumes:
+      - ./apps/web:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - api
+    networks:
+      - gensou-network
+
+  # Backend (FastAPI)
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./gensou-ai.db
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - ALIBABA_CLOUD_API_KEY=${ALIBABA_CLOUD_API_KEY}
+      - ZHIPU_API_KEY=${ZHIPU_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+    volumes:
+      - ./apps/api:/app
+      - ./scripts:/app/scripts
+      - api-data:/app/data
+    networks:
+      - gensou-network
+
+  # Database (PostgreSQL - for production)
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=gensou_ai
+      - POSTGRES_PASSWORD=gensou_ai_password
+      - POSTGRES_DB=gensou_ai
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - gensou-network
+    profiles:
+      - production
+
+volumes:
+  api-data:
+  postgres-data:
+
+networks:
+  gensou-network:
+    driver: bridge

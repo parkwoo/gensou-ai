@@ -1,0 +1,192 @@
+/* モバイルファーストレスポンシブデザイン */
+
+/* スマートフォン (デフォルト) */
+.container {
+  @apply px-4;
+}
+
+/* タブレット以上 */
+@media (min-width: 640px) {
+  .container {
+    @apply px-6;
+  }
+  
+  /* グリッドレイアウト */
+  .grid {
+    @apply grid-cols-2;
+  }
+}
+
+/* デスクトップ以上 */
+@media (min-width: 768px) {
+  .container {
+    @apply px-8;
+  }
+  
+  .grid {
+    @apply grid-cols-3;
+  }
+  
+  /* サイドバー表示 */
+  .mobile-nav {
+    @apply hidden;
+  }
+  
+  .desktop-sidebar {
+    @apply block;
+  }
+}
+
+/* 大画面デスクトップ */
+@media (min-width: 1024px) {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .grid {
+    @apply grid-cols-3;
+  }
+}
+
+/* エディタのモバイル最適化 */
+@media (max-width: 640px) {
+  .editor-toolbar {
+    @apply flex-wrap gap-1;
+  }
+  
+  .editor-toolbar button {
+    @apply h-8 w-8;
+  }
+  
+  .editor-content {
+    @apply px-2;
+  }
+}
+
+/* マインドマップのモバイル最適化 */
+@media (max-width: 640px) {
+  .mindmap-controls {
+    @apply flex-col gap-2;
+  }
+  
+  .mindmap-panel {
+    @apply p-2;
+  }
+}
+
+/* AI パネルのモバイル最適化 */
+@media (max-width: 640px) {
+  .ai-panel {
+    @apply w-full max-w-none;
+  }
+  
+  .ai-panel-header {
+    @apply py-2;
+  }
+}
+
+/* ナビゲーションのモバイル最適化 */
+.mobile-bottom-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-background border-t z-40 md:hidden;
+}
+
+.mobile-bottom-nav nav {
+  @apply flex justify-around items-center h-16;
+}
+
+/* タッチターゲットの最適化 */
+@media (pointer: coarse) {
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    @apply min-h-[44px];
+  }
+  
+  .icon-button {
+    @apply h-10 w-10;
+  }
+}
+
+/* 縦書き対応（モバイル） */
+@media (max-width: 640px) {
+  .writing-vertical-rl {
+    @apply text-lg;
+  }
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .dark-auto {
+    @apply dark;
+  }
+}
+
+/* 読み込みアニメーション */
+@keyframes skeleton {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  @apply bg-muted;
+  background-image: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 0,
+    hsl(var(--muted-foreground) / 0.1) 50%,
+    hsl(var(--muted)) 100%
+  );
+  background-size: 200px 100%;
+  animation: skeleton 1.2s ease-in-out infinite;
+}
+
+/* スクロールバーのカスタマイズ */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+/* プリンター対応 */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .container {
+    @apply max-w-none;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+}
+
+/* アクセシビリティ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
