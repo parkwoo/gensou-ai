@@ -11,6 +11,15 @@ An AI-powered novel writing assistant with mind map integration
 
 ---
 
+## About GenSou（玄想）
+
+"GenSou" is derived from the Japanese word "玄想" (gensō).
+"玄" means profound or deep, while "想" means thought or creativity.
+Together, "玄想" carries the nuance of "thinking deeply and creating."
+This project name reflects our mission: an AI tool that supports deep thinking and free imagination in storytelling.
+
+---
+
 ## 📖 Documentation
 
 ### User Documentation
@@ -27,6 +36,9 @@ An AI-powered novel writing assistant with mind map integration
 ## ✨ Features
 
 ### 🧠 Mind Map Integration
+
+![Mind Map](./docs/screenshots/03_mindmap.png)
+
 - **Visual Plot Creation**: Visualize complex story structures with interactive mind maps
 - **Drag & Drop**: Intuitively organize and structure your ideas
 - **Auto Generation**: AI automatically generates chapters and outlines from your mind map
@@ -42,7 +54,7 @@ An AI-powered novel writing assistant with mind map integration
 | SakuraLLM          | Japanese Specialized      | Japanese nuance           | ¥0.001/1K   |
 | Matsuri            | Japanese Novel Optimized  | Novel-trained model       | ¥0.0012/1K  |
 | DeepSeek-V2        | Mass Generation           | Best cost-performance     | ¥0.0002/1K  |
-| Qwen-JP            | Development & Testing     | High-quality Japanese     | ¥0.0004/1K  |
+| Qwen (DashScope)   | Development & Testing     | High-quality Japanese     | ¥0.0004/1K  |
 
 ### 📚 Knowledge Base
 - **Character Management**: Centralized appearance, personality, and background
@@ -51,6 +63,9 @@ An AI-powered novel writing assistant with mind map integration
 - **AI Integration**: References knowledge base to prevent inconsistencies
 
 ### 📖 Rich Editor
+
+![Editor](./docs/screenshots/05_editor.png)
+
 - **Notion-like Experience**: Comfortable and intuitive writing
 - **Vertical Text Mode**: Perfect for Japanese web novels and doujinshi
 - **Chapter Management**: Create, edit, delete, and reorder chapters
@@ -235,6 +250,8 @@ MIT License - Free for commercial use, modification, and distribution
 **[🇯🇵 日本語版 README はこちら](./README_ja.md)**
 
 ---
+
+![GenSou Mindmap Example](./docs/screenshots/03_mindmap.png)
 
 **GenSou AI - Map your thoughts, weave your stories.**
 

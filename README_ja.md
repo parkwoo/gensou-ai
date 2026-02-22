@@ -2,7 +2,14 @@
 
 ![GenSou Preview](./docs/preview.png)
 
-**Map your thoughts, weave your stories.（思考を地図にし、物語を綴る）**
+---
+
+## About GenSou（玄想）
+
+「GenSou」は日本語の「玄想」（げんそう）に由来します。
+「玄」は深い・奥深いを意味し、「想」は思考・創造を意味します。
+合わせた「玄想」には、「深く考え、創る」というニュアンスが込められています。
+このプロジェクト名は、物語創作において深い思考と自由な想像力を支えるAIツールというミッションを反映しています。
 
 ---
 
@@ -69,6 +76,9 @@ python scripts/seed_all.py
 ## ✨ 主な特徴
 
 ### 🧠 マインドマップ連動型プロット作成
+
+![マインドマップ](./docs/screenshots/03_mindmap.png)
+
 - 視覚的なプロット作成、ドラッグ＆ドロップでの構造化
 - 自動レイアウト機能で整理、設定矛盾の防止
 
@@ -78,7 +88,7 @@ python scripts/seed_all.py
 | GPT-5 | 主力モデル | ¥0.004/1K |
 | Claude 4 | 文章仕上げ | ¥0.005/1K |
 | Matsuri | 日本語小説向け | ¥0.0012/1K |
-| Qwen-JP | 開発・テスト生成 | ¥0.0004/1K |
+| Qwen (DashScope) | 開発・テスト生成 | ¥0.0004/1K |
 | その他 | SakuraLLM, DeepSeek-V2 等 | - |
 
 ### 📚 知識ベース管理
@@ -86,6 +96,9 @@ python scripts/seed_all.py
 - タグ付けによる関連項目の紐付け
 
 ### 📖 リッチエディタ
+
+![エディタ](./docs/screenshots/05_editor.png)
+
 - Notion ライクな操作感
 - 縦書き/横書きモード切り替え
 - 章管理・自動保存
@@ -147,6 +160,8 @@ MIT License - 商用利用・改変・配布すべて自由
 - Web サイト: [https://github.com/parkwoo/gensou-ai/](https://github.com/parkwoo/gensou-ai/)
 
 ---
+
+![GenSou Mindmap Example](./docs/screenshots/03_mindmap.png)
 
 **[🇺🇸 English version](./README.md)** | **GenSou AI - 思考を地図にし、物語を綴る。**
 
